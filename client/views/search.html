@@ -1,0 +1,52 @@
+<div class="search-header">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-18">
+
+            <form>
+               <h2 class="v-center">search</h2>
+               <p class="lead">/// Search Artists</p>
+
+               <div class="input-group">
+                  <input type="text" ng-model="showname" class="form-control input-md"/>
+                  <span class="input-group-btn">
+                     <button
+                        type="button"
+                        class="btn btn-md btn-warning pull-right"
+                        ng-click="searchShow()">Search</button>
+                  </span>
+               </div>
+            </form>
+            <div ng-if="results" class="results-block">
+               <div ng-repeat="(artists,items) in results">
+			   <br>
+			   <br>
+			   <br>
+
+                  <div class="row">
+                     <div class="show-name col-md-12"> {{items.name}}</div>
+                  </div>
+
+                   <div ng-switch="items.images.length" class="row" >
+				   <div ng-switch-when="0" class="col-md-3">
+                        <img ng-src="https://micvadam.files.wordpress.com/2013/12/li-no-profile-photo.jpg"/>
+                     </div>
+                     <div ng-switch-default class="col-md-3">
+                        <img ng-src="{{items.images[items.images.length -3].url}}"/>
+                     </div>
+					 </div>
+                     <div ng-if="items.genres.length >0" class="col-md-15">
+                        Genres:
+                           <div ng-repeat="genre in items.genres">
+						
+						   {{genre}}
+						   </div>
+                        </div>
+
+               </div>
+            </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.results-block {
+  margin-top: 20px;
+  padding: 10px 10px;
+  background: #EFEFEF;
+}
+
+.show-name {
+  font-size: 25px
+}
+
+hr {
+  border: 1px;
+  color: #000;
+}
